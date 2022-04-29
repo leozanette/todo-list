@@ -24,10 +24,33 @@ adiciona()
 
 function pintaDeCinza() {
     document.addEventListener('click', function (event) {
+        let selected = document.querySelector('.selected');
         if (event.target.className == 'lista') {
-            event.target.style.backgroundColor = 'gray'
+            if (selected == null) {
+                event.target.classList.add('selected')
+            } else {
+                selected.classList.remove('selected');
+                event.target.classList.add('selected')
+            }
+
         }
-    })
+
+    }
+    )
 }
 
 pintaDeCinza()
+
+// function changeSelected(event) {
+//     let selected = document.querySelector('.selected');
+//     if (selected == null) {
+//         event.target.classList.add('selected')
+//     } else {
+//         selected.classList.remove('selected');
+//         event.target.classList.add('selected')
+//     }
+//     return console.log(selected)
+// }
+
+// let selected = document.querySelector('.selected')
+// console.log(selected)
