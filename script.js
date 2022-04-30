@@ -42,35 +42,50 @@ pintaDeCinza()
 function doubleClick() {
 
     document.addEventListener('dblclick', function (event) {
-       if(event.target.classList.contains('lista')) {
+        if (event.target.classList.contains('lista')) {
 
-           if (event.target.classList.contains('completed')) {
-               event.target.classList.remove('completed')
+            if (event.target.classList.contains('completed')) {
+                event.target.classList.remove('completed')
             } else {
-                
+
                 event.target.classList.add('completed');
             }
             // if(event.target.classList.indexOf('completed')< 0) {
-                // event.target.classList.add('completed') 
-                // }       
-            }
+            // event.target.classList.add('completed') 
+            // }       
+        }
     }
     )
 }
 doubleClick()
 
 function apaga() {
-    
+
     let butao = document.getElementById('apaga-tudo');
-    butao.addEventListener('click', function() {
+    butao.addEventListener('click', function () {
         let lista = document.getElementById('lista-tarefas');
-        for(i = lista.childNodes.length-1; i >=0; i-=1) {
+        for (i = lista.childNodes.length - 1; i >= 0; i -= 1) {
             let filho = lista.childNodes[i];
             filho.remove();
         }
     })
 }
 apaga()
+
+function removeFinalizados() {
+
+    let butao = document.getElementById('remover-finalizados');
+    butao.addEventListener('click', function () {
+        let lista = document.getElementById('lista-tarefas');
+        for (i = lista.childNodes.length - 1; i >= 0; i -= 1) {
+            let filho = lista.childNodes[i];
+            if (filho.classList.contains('completed')) {    
+                filho.remove();
+            }
+        }
+    })
+}
+removeFinalizados()
 
 // function changeSelected(event) {
 //     let selected = document.querySelector('.selected');
