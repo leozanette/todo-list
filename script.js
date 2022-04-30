@@ -59,7 +59,18 @@ function doubleClick() {
 }
 doubleClick()
 
-
+function apaga() {
+    
+    let butao = document.getElementById('apaga-tudo');
+    butao.addEventListener('click', function() {
+        let lista = document.getElementById('lista-tarefas');
+        for(i = lista.childNodes.length-1; i >=0; i-=1) {
+            let filho = lista.childNodes[i];
+            filho.remove();
+        }
+    })
+}
+apaga()
 
 // function changeSelected(event) {
 //     let selected = document.querySelector('.selected');
