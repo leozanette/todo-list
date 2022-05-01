@@ -75,13 +75,18 @@ function removeFinalizados() {
 }
 removeFinalizados()
 
+
+let storage = localStorage.getItem('storage');
+if(storage) {
+    document.getElementById('lista-tarefas').innerHTML = storage
+}
+
+
 function salvarTarefas() {
     let butao = document.getElementById('salvar-tarefas');
+    let lista = document.getElementById('lista-tarefas');
     butao.addEventListener('click', function() {
-        let lista = this.getElementsByClassName('lista');
-        for(i=0; i<lista.length; i+=1) {
-            localStorage.setItem(i+1,lista[i].innerHTML);
-        }
+        localStorage.setItem('storage',lista.innerHTML)
     })
 }
 salvarTarefas()
@@ -94,3 +99,4 @@ function removeSelecionado() {
     })
 }
 removeSelecionado()
+
