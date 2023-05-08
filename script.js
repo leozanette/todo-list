@@ -1,3 +1,7 @@
+const moveUp = document.querySelector('#mover-cima');
+const moveDown = document.querySelector('#mover-baixo');
+const ol = document.querySelector('#lista-tarefas');
+
 function adiciona() {
     let input = document.getElementById('texto-tarefa');
     let button = document.getElementById('criar-tarefa');
@@ -12,7 +16,6 @@ function adiciona() {
 
     })
 }
-adiciona()
 
 function pintaDeCinza() {
     let local = document.getElementById('list-local');
@@ -30,7 +33,6 @@ function pintaDeCinza() {
         }
     })
 }
-pintaDeCinza()
 
 function doubleClick() {
     let local = document.getElementById('list-local');
@@ -47,7 +49,6 @@ function doubleClick() {
     }
     )
 }
-doubleClick()
 
 function apaga() {
     let butao = document.getElementById('apaga-tudo');
@@ -59,7 +60,6 @@ function apaga() {
         }
     })
 }
-apaga()
 
 function removeFinalizados() {
     let butao = document.getElementById('remover-finalizados');
@@ -73,14 +73,11 @@ function removeFinalizados() {
         }
     })
 }
-removeFinalizados()
-
 
 let storage = localStorage.getItem('storage');
 if(storage) {
     document.getElementById('lista-tarefas').innerHTML = storage
 }
-
 
 function salvarTarefas() {
     let butao = document.getElementById('salvar-tarefas');
@@ -89,7 +86,6 @@ function salvarTarefas() {
         localStorage.setItem('storage',lista.innerHTML)
     })
 }
-salvarTarefas()
 
 function removeSelecionado() {
     let butao = document.getElementById('remover-selecionado');
@@ -98,5 +94,38 @@ function removeSelecionado() {
                 lista.remove();
     })
 }
-removeSelecionado()
 
+function trocarPosicao(array, de, para) {
+    array.splice(para,0,array.splice(de,1)[0]);
+    array.forEach(li => {
+        ol.appendChild(li);
+    });
+    return array;
+}
+
+function moverLi(operacao) {
+  const arrayLi = document.querySelectorAll('li');
+  console.log(arrayLi);
+  const arrayValue = Object.values(arrayLi);
+  console.log(arrayValue);
+  const itens = arrayValue.findIndex((item) => item.classList.contains('selected'));
+    console.log(itens);
+    if (itens === -1) {
+        return alert('Error, voce nao selecionou nenhuma tarefa') 
+    }
+
+    const to = operacao === '+' ? itens -1 : itens + 1;
+    trocarPosicao(arrayValue, itens, to);
+}
+
+moveUp.addEventListener('click', () => moverLi('+'));
+moveDown.addEventListener('click', () => moverLi('-'));
+
+
+adiciona()
+pintaDeCinza()
+doubleClick()
+apaga()
+removeFinalizados()
+salvarTarefas()
+removeSelecionado()
