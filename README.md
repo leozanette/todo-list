@@ -1,13 +1,26 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Todo List
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Este projeto foi desenvolvido como parte do Módulo de Fundamentos do curso de Desenvolvimento Web Full Stack da Trybe. O objetivo deste projeto é implementar uma lista de tarefas (to-do list) em JavaScript.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Para visualizar o projeto em ação, acesse o [link do GitHub Pages](https://leozanette.github.io/todo-list/). O código-fonte do projeto está disponível neste [repositório do GitHub](https://github.com/leozanette/todo-list).
+
+## Funcionalidades
+
+- Adicionar tarefas à lista.
+- Marcar tarefas como concluídas.
+- Excluir tarefas da lista.
+- Marcar todas as tarefas como concluídas.
+- Excluir todas as tarefas concluídas.
+
+## Como Usar
+
+1. Acesse o [link do GitHub Pages](https://leozanette.github.io/todo-list/) do projeto.
+2. Insira uma tarefa na caixa de texto e clique no botão "Adicionar".
+3. Clique na tarefa para seleciona-la.
+4. Clique duas vezes na tarefa para marcá-la como concluída.
+
+## Tecnologias Utilizadas
+
+- HTML
+- CSS
+- JavaScript
